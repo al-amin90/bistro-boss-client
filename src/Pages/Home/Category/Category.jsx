@@ -14,10 +14,12 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 const Category = () => {
     return (
         <div className='w-[90%] my-28 md:w-[80%] mx-auto '>
-            <SectionTitle
-                heading={"ORDER ONLINE"}
-                subHeading={"From 11:00am to 10:00pm"}
-            ></SectionTitle>
+            <div className='text-black'>
+                <SectionTitle
+                    heading={"ORDER ONLINE"}
+                    subHeading={"From 11:00am to 10:00pm"}
+                ></SectionTitle>
+            </div>
 
 
             <Swiper

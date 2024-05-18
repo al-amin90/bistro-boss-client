@@ -17,10 +17,12 @@ const PopularMenu = () => {
 
     return (
         <section className='w-[90%] my-28 md:w-[80%] mx-auto '>
-            <SectionTitle
-                heading={"From Our Menu"}
-                subHeading={"Popular Items"}
-            ></SectionTitle>
+            <div className='text-black'>
+                <SectionTitle
+                    heading={"From Our Menu"}
+                    subHeading={"Popular Items"}
+                ></SectionTitle>
+            </div>
 
             <div className='grid grid-cols-2 mt-16 gap-6'>
                 {
