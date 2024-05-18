@@ -9,14 +9,15 @@ import slider2 from "../../../assets/home/slide2.jpg"
 import slider3 from "../../../assets/home/slide3.jpg"
 import slider4 from "../../../assets/home/slide4.jpg"
 import slider5 from "../../../assets/home/slide5.jpg"
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Category = () => {
     return (
         <div className='w-[90%] my-28 md:w-[80%] mx-auto '>
-            <div className='text-center'>
-                <h6 className='text-[#D99904] italic'>---From 11:00am to 10:00pm---</h6>
-                <h1 className='text-black mt-4 mb-12  max-w-96 mx-auto p-4 border-y-4 text-4xl'>ORDER ONLINE</h1>
-            </div>
+            <SectionTitle
+                heading={"ORDER ONLINE"}
+                subHeading={"From 11:00am to 10:00pm"}
+            ></SectionTitle>
 
 
             <Swiper
