@@ -23,15 +23,16 @@ const Testimonial = () => {
     return (
         <section className='w-[90%] my-28 md:w-[80%] mx-auto'>
             <SectionTitle
+                color={"black"}
                 subHeading={"What Our Clients Say"}
                 heading={"TESTIMONIALS"}
             ></SectionTitle>
 
 
             <Swiper
+                navigation={true}
                 autoplay={true}
                 loop={true}
-                navigation={true}
                 modules={[Navigation]}
                 className="mySwiper">
 

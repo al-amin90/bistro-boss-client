@@ -4,8 +4,9 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 const Featured = () => {
     return (
         <div className='bg-no-repeat bg-cover bg-center bg-fixed ' style={{ backgroundImage: `url(${featuresImg})` }}>
-            <div className='bg-black text-white py-28 w-full h-full bg-opacity-60'>
+            <div className='bg-black py-28 w-full h-full bg-opacity-60'>
                 <SectionTitle
+                    color="white"
                     heading={" Featured item"}
                     subHeading={"FROM OUR MENU"}
                 ></SectionTitle>

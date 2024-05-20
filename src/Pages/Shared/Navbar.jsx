@@ -1,6 +1,5 @@
 import cart from "../../assets/icon/cart.png"
 import profile from "../../assets/profile.png"
-import logo from "../../assets/logo.png"
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -40,7 +39,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex gap-3 font-extrabold font-cinzle items-end">
-                        <img src={logo} className="w-12" alt="" />
+                        <img src="/logo.png" className="w-12" alt="" />
                         <div className="md:block hidden">
                             <p>BISTRO BOSS</p>
                             <p className="font-normal tracking-widest">Restaurant</p>

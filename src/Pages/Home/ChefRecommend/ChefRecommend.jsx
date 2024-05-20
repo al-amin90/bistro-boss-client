@@ -18,12 +18,13 @@ const ChefRecommend = () => {
 
     return (
         <div className='w-[90%] relative my-24 md:w-[80%] mx-auto '>
-            <div className='text-black'>
-                <SectionTitle
-                    heading={"CHEF RECOMMENDS"}
-                    subHeading={" Should Try"}
-                ></SectionTitle>
-            </div>
+
+            <SectionTitle
+                color="black"
+                heading={"CHEF RECOMMENDS"}
+                subHeading={" Should Try"}
+            ></SectionTitle>
+
 
             <div className='grid grid-cols-3 gap-6'>
                 {
