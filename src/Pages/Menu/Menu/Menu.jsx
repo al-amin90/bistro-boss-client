@@ -2,28 +2,22 @@ import { Helmet } from 'react-helmet-async';
 import banner from '../../../assets/menu/banner3.jpg'
 import PageCover from '../../Shared/PageCover';
 import MenuCategory from '../MenuCategory/MenuCategory';
-import useMenu from '../../../Hooks/useMenu';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import SectionCover from '../../Shared/SectionCover';
 import pizzBg from '../../../assets/menu/pizza-bg.jpg'
 import dessertsBg from '../../../assets/menu/dessert-bg.jpeg'
 import saladsBg from '../../../assets/menu/salad-bg.jpg'
 import soupsBg from '../../../assets/menu/soup-bg.jpg'
+import useMenuFood from '../../../Hooks/useMenuFood';
+import UseHelmet from '../../../components/UseHelmet/UseHelmet';
 
 const Menu = () => {
-    const { menu } = useMenu()
-    const desserts = menu.filter(item => item.category === "dessert")
-    const soups = menu.filter(item => item.category === "soup")
-    const salads = menu.filter(item => item.category === "salad")
-    const pizzas = menu.filter(item => item.category === "pizza")
-    const offered = menu.filter(item => item.category === "offered")
+    const { desserts, soups, salads, pizzas, offered } = useMenuFood()
 
 
     return (
         <div>
-            <Helmet>
-                <title>Bistro Boss | Menu</title>
-            </Helmet>
+            <UseHelmet name={"Menu"}></UseHelmet>
+
             <PageCover
                 img={banner}
                 title={"our menu"}

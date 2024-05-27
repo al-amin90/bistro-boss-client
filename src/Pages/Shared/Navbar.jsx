@@ -1,9 +1,13 @@
-import cart from "../../assets/icon/cart.png"
+import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
+import cartImg from "../../assets/icon/cart.png"
 import profile from "../../assets/profile.png"
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
-
+    const { user, logOut } = useAuth()
+    const [cart] = useCart()
 
     const navLinks = <div className='flex flex-col lg:flex-row items-center text-sm lg:gap-4 uppercase *:cursor-pointer font-semibold'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
@@ -18,13 +22,31 @@ const Navbar = () => {
         <li><NavLink to="/menu" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
             Our Menu
         </NavLink></li>
-        <li><NavLink to="/shop" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
-            Our Shop
+        <li><NavLink to="/order/salads" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
+            order Food
         </NavLink></li>
         <li>
-            <img src={cart} className="w-11 lg:block hidden" alt="" />
+            <Link to="/dashboard/cart">
+                <button className="relative hidden md:block" >
+                    <img src={cartImg} className="w-11 " alt="" />
+                    <div className="badge text-xs absolute -right-3 bottom-0 border-none text-white bg-[#FF0000]">+{cart?.length}</div>
+                </button>
+
+            </Link>
         </li>
     </div>
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    title: "Log Out!",
+                    text: "Log Out successFully!",
+                    icon: "success"
+                });
+            })
+    }
 
     return (
         <div>
@@ -53,9 +75,18 @@ const Navbar = () => {
                 </div>
                 <div className="">
                     {/* <img className="" src={profile} alt="" /> */}
+                    {user ?
+                        <button onClick={handleLogOut} className="font-bold ml-16 mr-4 rounded-sm py-1 px-3 bg-[#ff2c258a] text-white">LogOut</button>
+                        :
+                        <>
+                            <Link to="/login">
+                                <button className="font-bold ml-16 mr-4 rounded-sm py-1 px-3 bg-[#edff258a] text-white">Login</button>
+                            </Link>
+                        </>}
+
                     <div className="avatar">
-                        <div className="w-9 ml-16 rounded-full">
-                            <img src={profile} />
+                        <div className="w-9  rounded-full">
+                            <img src={user?.photoURL || profile} />
                         </div>
                     </div>
                 </div>

@@ -8,17 +8,17 @@ import axios from 'axios';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
 import quart from "../../../assets/quart.png"
+import { baseURL } from '../../../Utilis/.baseURL';
 
 const Testimonial = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        axios.get('/reviews.json')
+        axios.get(`${baseURL}/review`)
             .then(res => {
                 setReviews(res.data)
             })
     }, [])
-    console.log(reviews);
 
     return (
         <section className='w-[90%] my-28 md:w-[80%] mx-auto'>
