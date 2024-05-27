@@ -35,7 +35,8 @@ const Dashboard = () => {
                                 <FaUtensils className='text-2xl mr-2' />
                                 Add Item
                             </NavLink></li>
-                            <li className=''><NavLink className={({ isActive }) => isActive ? " text-white " : " text-black"} to="/dashboard/payment">
+
+                            <li className=''><NavLink className={({ isActive }) => isActive ? " text-white " : " text-black"} to="/dashboard/manageItems">
                                 <FaListUl className='text-2xl mr-2' />
                                 Manage Items
                             </NavLink></li>
