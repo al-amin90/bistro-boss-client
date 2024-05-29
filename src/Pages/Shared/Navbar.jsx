@@ -4,10 +4,12 @@ import cartImg from "../../assets/icon/cart.png"
 import profile from "../../assets/profile.png"
 import { Link, NavLink } from 'react-router-dom';
 import useCart from "../../Hooks/useCart";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
     const [cart] = useCart()
+    const [isAdmin] = useAdmin()
 
     const navLinks = <div className='flex flex-col lg:flex-row items-center text-sm lg:gap-4 uppercase *:cursor-pointer font-semibold'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
@@ -16,9 +18,16 @@ const Navbar = () => {
         <li><NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
             CONTACT us
         </NavLink></li>
-        <li><NavLink to="/dashboard" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
-            DASHBOARD
-        </NavLink></li>
+        {
+            user && isAdmin && <li><NavLink to="/dashboard/adminHome" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
+                DASHBOARD
+            </NavLink></li>
+        }
+        {
+            user && !isAdmin && <li><NavLink to="/dashboard/userHome" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
+                DASHBOARD
+            </NavLink></li>
+        }
         <li><NavLink to="/menu" className={({ isActive }) => isActive ? "font-bold text-[#EEFF25]" : ""}>
             Our Menu
         </NavLink></li>

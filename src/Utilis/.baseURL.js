@@ -1,1 +1,1 @@
-export const baseURL = "http://localhost:5000"
+export const baseURL = "https://bistro-boss-server-pink-one.vercel.app";

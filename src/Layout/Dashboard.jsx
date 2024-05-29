@@ -63,7 +63,7 @@ const Dashboard = () => {
                                     <FaCalendarDays className='text-2xl mr-2' />
                                     reservation
                                 </NavLink></li>
-                                <li className=''><NavLink className={({ isActive }) => isActive ? " text-white " : " text-black"} to="/dashboard/payment">
+                                <li className=''><NavLink className={({ isActive }) => isActive ? " text-white " : " text-black"} to="/dashboard/paymentHistory">
                                     <IoWalletSharp className='text-2xl mr-2' />
                                     payment history
                                 </NavLink></li>
